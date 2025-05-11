@@ -2,6 +2,14 @@ from flask import Flask, request
 import requests
 import random
 import os
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "Hello, Mali's bot is running!"
+
 
 app = Flask(__name__)
 
