@@ -1,20 +1,16 @@
 from flask import Flask, request
 import requests
-import random
 import os
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return "Hello, Mali's bot is running!"
-
+import random
 
 app = Flask(__name__)
 
 PAGE_ACCESS_TOKEN = os.environ.get("PAGE_ACCESS_TOKEN", "REPLACE_WITH_TOKEN")
 VERIFY_TOKEN = os.environ.get("VERIFY_TOKEN", "mali-secret-token")
+
+@app.route('/')
+def home():
+    return "Mali's Chatbot is running!"
 
 @app.route('/webhook', methods=['GET'])
 def verify():
